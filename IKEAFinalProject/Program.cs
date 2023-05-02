@@ -33,10 +33,68 @@ namespace IKEAFinalProject
             var ikeaCustomerAppointment3 = new IkeaPersonalShoppingAppointment();
 
 
+            
+        }
+
+        static void AppointmentPage()
+        {
+            Console.WriteLine("Choose your option: 1: Login  2: Logout 3: Clear 4: Quit 5: Set Up An Appointment");
+            Console.WriteLine("Please choose one of the options above: ");
+            String option = Console.ReadLine();
+            switch (option)
+            {
+                case "1":
+                    LoginScreen();
+                    break;
+                case "2":
+                    LogoutScreen();
+                    break;
+                case "3":
+                    Eliminate();
+                    break;
+                case "4":
+                    IQuit();
+                    break;
+                case "5":
+                    SetUpAnAppointment();
+                    break;
+                default:
+                    Console.WriteLine("You entered an incorrect character!");
+                    break;
+
+
+
+
+
+            }
+
+
+            static void LoginScreen()
+            {
+            }
+
+            static void LogoutScreen()
+            {
+
+            }
+
+            static void Eliminate()
+            {
+
+            }
+
+            static void IQuit()
+            {
+
+            }
+
+            static void SetUpAnAppointment()
+            {
+            }
 
         }
 
-       
+
 
 
 
