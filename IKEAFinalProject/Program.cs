@@ -36,29 +36,37 @@ namespace IKEAFinalProject
 
         static void AppointmentPage()
         {
-            Console.WriteLine("Choose your option: 1: Login  2: Logout 3: Clear 4: Quit 5: Set Up An Appointment");
-            Console.WriteLine("Please choose one of the options above: ");
-            String option = Console.ReadLine();
-            switch (option)
+            Console.WriteLine("Choose your option: 1: Login  2: Logout 3: Clear 4: Quit 5: Set Up An Appointment"); // We are asking the user to enter an option from 1-5.
+            Console.WriteLine("Please choose one of the options above: "); // We ask the user to choose the following options above
+            String option = Console.ReadLine(); // We are reading what the user inputs and store the information into string option
+            switch (option) //we start our switch statement
             {
-                case "1":
-                    LoginScreen();
-                    break;
-                case "2":
-                    LogoutScreen();
-                    break;
-                case "3":
-                    Eliminate();
-                    break;
-                case "4":
-                    IQuit();
-                    break;
-                case "5":
-                    SetUpAnAppointment();
-                    break;
-                default:
-                    Console.WriteLine("You entered an incorrect character!");
-                    break;
+//<<<<<<< Updated upstream
+              
+                case "1": //when the user enters 1, it leads the user to the login screen
+                    LoginScreen(); // the code in loginscreen runs
+                    break; //move on to case 2
+                case "2": // leads the user to the logout screen
+                    LogoutScreen(); //the code in Logoutscreen void runs
+                    break; //move on to case 3
+                case "3": //leads the user to the clear option
+                    Eliminate(); //Clearing the user information
+                    break; // move on to case 4
+                case "4": //leads the user to the quit option
+                    IQuit(); //Quit
+                    break; // move on to case 5
+                case "5": //leads the user to set up an Ikea Appointment
+                    SetUpAnAppointment(); //the code in SetUpAnAppointment runs
+                    break; //move on to default
+                default: // test...
+                    Console.WriteLine("You entered an incorrect character!"); // The user entered in the wrong character for options
+                    break; //our switch statement concludes.
+
+
+
+
+
+//>>>>>>> Stashed changes
             }
 
 
@@ -70,7 +78,11 @@ namespace IKEAFinalProject
                     string Username = Console.ReadLine();
                     Console.WriteLine("Please enter your IKEA password: ");
                     string Password = Console.ReadLine();
-                    verifyCustomer = IkeaCustomers.Verify(Username, Password);
+                    verifyCustomer = IkeaCustomer.Verify(Username, Password);
+                    if (IkeaCustomer.Verify != NULL)
+                    {
+                        Console.WriteLine("Welcome");
+                    }
                 }
 
 
