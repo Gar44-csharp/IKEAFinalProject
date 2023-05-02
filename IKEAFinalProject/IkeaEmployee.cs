@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IKEAFinalProject
 {
-    internal class IkeaEmployee
+    public class IkeaEmployee
     {
     }
 }

@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace IKEAFinalProject
 {
-    internal class ShoppingAppointment
+    public class IkeaCustomerAppointment
     {
+        public IkeaCustomer customerIkea { get; set; }
+        // 
+
+        public IkeaPersonalShoppingAppointment appointmentShoppingAppt { get; set; }
+        //
+
+        public IkeaCustomerAppointment (IkeaCustomer i, IkeaPersonalShoppingAppointment ipsa)
+        {
+            customerIkea = i;
+            // 
+            appointmentShoppingAppt = ipsa;
+            // 
+        }
+
+
+
     }
 }

@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace IKEAFinalProject
 {
-    internal class PersonalShoppingAppointment
+    public class IkeaPersonalShoppingAppointment
     {
+        private static int instance;
+        //
+        public int IkeaID { get; set; }
+        //
+        public DateTime appointmentDate { get; set; }
+        //
+        public IkeaPersonalShoppingAppointment()
+        //
+        {
+            instance++;
+            //
+            IkeaID = instance;
+            //
+        }
+
+
+
+
+
+
+
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace IKEAFinalProject
 {
-    internal class Customers
+    public class IkeaCustomers
     {
+        
+
+
+
+
+
     }
 }
