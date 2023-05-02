@@ -11,14 +11,14 @@ namespace IKEAFinalProject
         public IkeaCustomer customerIkea { get; set; }
         // 
 
-        public IkeaPersonalShoppingAppointment appointmentShoppingAppt { get; set; }
+        public IkeaPersonalShoppingAppointment appointmentShopping { get; set; }
         //
 
         public IkeaCustomerAppointment (IkeaCustomer i, IkeaPersonalShoppingAppointment ipsa)
         {
             customerIkea = i;
             // 
-            appointmentShoppingAppt = ipsa;
+            appointmentShopping = ipsa;
             // 
         }
 
