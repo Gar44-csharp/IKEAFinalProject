@@ -57,7 +57,7 @@ namespace IKEAFinalProject
                     IQuit(); //Quit
                     break; // move on to case 5
                 case "5": //leads the user to set up an Ikea Appointment
-                    SetUpAnAppointment(); //the code in SetUpAnAppointment runs
+                    SignUpForAnAppointment(); //the code in SetUpAnAppointment runs
                     break; //move on to default
                 default: // test...
                     Console.WriteLine("You entered an incorrect character!"); // The user entered in the wrong character for options
