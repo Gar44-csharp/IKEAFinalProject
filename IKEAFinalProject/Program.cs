@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel.Design;
+using System.Text;
 
 namespace IKEAFinalProject
 {
@@ -54,7 +55,7 @@ namespace IKEAFinalProject
                     IQuit();
                     break;
                 case "5":
-                    SetUpAnAppointment();
+                    SignUpForAnAppointment();
                     break;
                 default:
                     Console.WriteLine("You entered an incorrect character!");
@@ -71,15 +72,36 @@ namespace IKEAFinalProject
                     Console.WriteLine("Please enter your IKEA password: ");
                     string Password = Console.ReadLine();
                     verifyCustomer = IkeaCustomers.Verify(Username, Password);
+                    if (verifyCustomer != null)
+                    {
+                        Console.WriteLine($"Welcome {verifyCustomer.FirstName} to the IKEA personal shopping appointment system!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("That Username or Password is incorrect");
+                    }
                 }
-
-
-
+                else
+                {
+                    Console.WriteLine($"You are already logged in {verifyCustomer} to the IKEA personal shopping system");
+                }
             }
 
             static void LogoutScreen()
             {
+                verifyCustomer = null;
+                Console.WriteLine("You are logged out!");
+            }
 
+            static void SignUpForAnAppointment()
+            {
+                Console.Write("What is your First Name: ");
+                string firstname = Console.ReadLine();
+                Console.Write("What is your Last Name: ");
+                string lastname = Console.ReadLine();
+                Console.WriteLine("Please type a Username: ");
+                string username = Console.ReadLine();
+                Console.Write("Please enter a Password: ");
             }
 
             static void Eliminate()
@@ -92,9 +114,7 @@ namespace IKEAFinalProject
 
             }
 
-            static void SetUpAnAppointment()
-            {
-            }
+            
 
         }
 

@@ -9,7 +9,6 @@ namespace IKEAFinalProject
 {
     public class IkeaCustomers
     {
-
         internal class Customers
         {
             public List<IkeaCustomer> customers { get; set; }
