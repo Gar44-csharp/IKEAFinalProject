@@ -31,8 +31,6 @@ namespace IKEAFinalProject
             var ikeaCustomerAppointment1 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment2 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment3 = new IkeaPersonalShoppingAppointment();
-
-
             
         }
 
@@ -61,16 +59,22 @@ namespace IKEAFinalProject
                 default:
                     Console.WriteLine("You entered an incorrect character!");
                     break;
-
-
-
-
-
             }
 
 
             static void LoginScreen()
             {
+                if (verifyCustomer == null)
+                {
+                    Console.WriteLine("Please enter your IKEA username: ");
+                    string Username = Console.ReadLine();
+                    Console.WriteLine("Please enter your IKEA password: ");
+                    string Password = Console.ReadLine();
+                    verifyCustomer = IkeaCustomers.Verify(Username, Password);
+                }
+
+
+
             }
 
             static void LogoutScreen()

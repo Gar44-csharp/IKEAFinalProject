@@ -20,7 +20,7 @@ namespace IKEAFinalProject
             }
             // This function allows the user to input new information or for returning users to input info
 
-            public IkeaCustomer Authenticate(string username, string password)
+            public IkeaCustomer Verify(string username, string password)
             {
                 var c = customers.Where(o => (o.Username == username) && (o.Password == password));
                 // This function checks whether or not the user has inputed the right username and or password
