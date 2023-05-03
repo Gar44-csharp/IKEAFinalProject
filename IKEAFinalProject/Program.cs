@@ -18,7 +18,7 @@ namespace IKEAFinalProject
             LoadingScreen();
             // This is a method that will be used later for development of the loading screen.
             AppointmentPage();
-            // This is a method that will be used later for possible development of Appointment page.              
+            // This is a method that will be used later for the development of Appointment page.              
         }
 
         static void LoadingScreen() 
@@ -60,7 +60,7 @@ namespace IKEAFinalProject
         {
             if (verifyCustomer == null)
             {
-            Console.WriteLine("Choose your option: 1: Login  2: Logout 3: Clear 4: Quit 5: Set Up An Appointment"); // We are asking the user to enter an option from 1-5.
+            Console.WriteLine("Choose your option: 1: Login  2: Logout 3: View Your Ikea Personal Shopping Appointment 4: Quit 5: Set Up An Appointment"); // We are asking the user to enter an option from 1-5.
             Console.WriteLine("Please choose one of the options above: "); // We ask the user to choose the following options above
             String option = Console.ReadLine(); // We are reading what the user inputs and store the information into string option
             switch (option) //we start our switch statement
@@ -73,9 +73,9 @@ namespace IKEAFinalProject
                 case "2": // leads the user to the logout screen
                     LogoutScreen(); //the code in Logoutscreen void runs
                     break; //move on to case 3
-                case "3": //leads the user to the clear option
-                    Eliminate(); //Clearing the user information
-                    break; // move on to case 4
+                case "3": // Allows the user to the view their appointment 
+                    ViewIkeaPersonalShoppingAppointment(); //leads to appointment screen
+                    break; // brings you to next case.
                 case "4": //leads the user to the quit option
                     Console.Clear(); // Quits the screen.
                     break; // move on to case 5
@@ -129,10 +129,27 @@ namespace IKEAFinalProject
                 Console.WriteLine("Awesome! We have created your Ikea profile so you can make appointments!");
             }
 
-            static void Eliminate()
+            static void ViewIkeaPersonalShoppingAppointment()
             {
+                if (verifyCustomer == null)
+                {
+                    Console.WriteLine("Oh no, it seems like you are not logged in!");
+                }
 
-            }
+                var ikeaAppointmentList = ikeaCustomerAppointments.Where(o => o.customerIkea.Username == verifyCustomer.Username);
+
+                if(ikeaAppointmentList.Count() == 0)
+                {
+                    Console.WriteLine("We have no record of your IKEA personal shopping appointment");
+                }
+                else
+                {
+                    foreach(var personalShopping in  ikeaAppointmentList)
+                    {
+                        Console.WriteLine(personalShopping.appointmentShopping.appointmentDate);
+                    }
+                }
+            }         
         }
     }
 }
