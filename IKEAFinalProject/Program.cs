@@ -53,6 +53,7 @@ namespace IKEAFinalProject
             var ikeaCustomerAppointment1 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment2 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment3 = new IkeaPersonalShoppingAppointment();
+
             
         }
 
