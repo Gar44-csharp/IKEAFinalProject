@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Design;
 using System.Text;
 
+
 namespace IKEAFinalProject
 {
     public class Program
@@ -37,6 +38,8 @@ namespace IKEAFinalProject
 
         static void AppointmentPage()
         {
+            if (verifyCustomer == null)
+            {
             Console.WriteLine("Choose your option: 1: Login  2: Logout 3: Clear 4: Quit 5: Set Up An Appointment"); // We are asking the user to enter an option from 1-5.
             Console.WriteLine("Please choose one of the options above: "); // We ask the user to choose the following options above
             String option = Console.ReadLine(); // We are reading what the user inputs and store the information into string option
@@ -54,7 +57,7 @@ namespace IKEAFinalProject
                     Eliminate(); //Clearing the user information
                     break; // move on to case 4
                 case "4": //leads the user to the quit option
-                    IQuit(); //Quit
+                    Quit(); //Quit
                     break; // move on to case 5
                 case "5": //leads the user to set up an Ikea Appointment
                     SignUpForAnAppointment(); //the code in SetUpAnAppointment runs
@@ -62,28 +65,29 @@ namespace IKEAFinalProject
                 default: // test...
                     Console.WriteLine("You entered an incorrect character!"); // The user entered in the wrong character for options
                     break; //our switch statement concludes.
-
-
-
-
-
 //>>>>>>> Stashed changes
             }
 
 
             static void LoginScreen()
-            {
-                if (verifyCustomer == null)
                 {
-                    Console.WriteLine("Please enter your IKEA username: ");
-                    string Username = Console.ReadLine();
-                    Console.WriteLine("Please enter your IKEA password: ");
-                    string Password = Console.ReadLine();
-                    verifyCustomer = IkeaCustomers.Verify(Username, Password);
+                    if (verifyCustomer == null)
+                    {
+                        Console.WriteLine("Please enter your IKEA username: ");
+                        string Username = Console.ReadLine();
+                        Console.WriteLine("Please enter your IKEA password: ");
+                        string Password = Console.ReadLine();
+                        verifyCustomer = IkeaCustomers.Verify(Username,Password);
+                        if (verifyCustomer != null)
+                        {
+                            Console.WriteLine($"Welcome {verifyCustomer.FirstName}");
+                        } 
+                        else
+                        {
+                            Console.WriteLine("That username or password is invalid");
+                        }
+                    }
                 }
-
-
-
             }
 
             static void LogoutScreen()
@@ -101,6 +105,7 @@ namespace IKEAFinalProject
                 Console.WriteLine("Please type a Username: ");
                 string username = Console.ReadLine();
                 Console.Write("Please enter a Password: ");
+                Console.WriteLine("Awesome! We have created your Ikea profile so you can make appointments!");
             }
 
             static void Eliminate()
@@ -108,20 +113,12 @@ namespace IKEAFinalProject
 
             }
 
-            static void IQuit()
+            static void Quit()
             {
 
             }
-
             
 
         }
-
-
-
-
-
-
-
     }
 }
