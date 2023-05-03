@@ -16,9 +16,9 @@ namespace IKEAFinalProject
             Console.WriteLine("Hello IKEA customer, welcome to our personal shopping appointment portal!");
             // This is introducing the IKEA customer to the appointment page!
             LoadingScreen();
-            //
+            // This is a method that will be used later for development of the loading screen.
             AppointmentPage();
-            //                
+            // This is a method that will be used later for possible development of Appointment page.              
         }
 
         static void LoadingScreen() 
