@@ -44,6 +44,12 @@ namespace IKEAFinalProject
                 Username = "LakeshowLD23",
                 Password = "LAForLikfe20",
             };
+            
+            ikeaCustomers = new IkeaCustomers();
+            ikeaCustomers.customers.Add(ikeaCustomer1);
+            ikeaCustomers.customers.Add(ikeaCustomer2);
+            ikeaCustomers.customers.Add(ikeaCustomer3);
+            
             var ikeaCustomerAppointment1 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment2 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment3 = new IkeaPersonalShoppingAppointment();
@@ -88,10 +94,10 @@ namespace IKEAFinalProject
                     if (verifyCustomer == null)
                     {
                         Console.WriteLine("Please enter your IKEA username: ");
-                        string Username = Console.ReadLine();
+                        string username = Console.ReadLine();
                         Console.WriteLine("Please enter your IKEA password: ");
-                        string Password = Console.ReadLine();
-                        verifyCustomer = IkeaCustomers.Verify(Username,Password);
+                        string password = Console.ReadLine();
+                        verifyCustomer = ikeaCustomers.Verify(username,password);
                         if (verifyCustomer != null)
                         {
                             Console.WriteLine($"Welcome {verifyCustomer.FirstName}");
