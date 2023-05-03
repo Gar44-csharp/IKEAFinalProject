@@ -144,9 +144,9 @@ namespace IKEAFinalProject
                 }
                 else
                 {
-                    foreach(var personalShopping in  ikeaAppointmentList)
+                    foreach(var IkeaPersonalShoppingAppointment in  ikeaAppointmentList)
                     {
-                        Console.WriteLine(personalShopping.appointmentShopping.appointmentDate);
+                        Console.WriteLine(IkeaPersonalShoppingAppointment.appointmentShopping.appointmentDate);
                     }
                 }
             }         
