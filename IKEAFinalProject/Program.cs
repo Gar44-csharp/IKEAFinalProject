@@ -30,6 +30,20 @@ namespace IKEAFinalProject
                 Username = "JimmyEliteHeat21",
                 Password = "Heatbroomsweep",
             };
+            var ikeaCustomer2 = new IkeaCustomer
+            {
+                FirstName = "Giannis",
+                LastName = "Portis Jr",
+                Username = "GP349Jr",
+                Password = "Bucksin6",
+            };
+            var ikeaCustomer3 = new IkeaCustomer
+            {
+                FirstName = "Lebron",
+                LastName = "Davis",
+                Username = "LakeshowLD23",
+                Password = "LAForLikfe20",
+            };
             var ikeaCustomerAppointment1 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment2 = new IkeaPersonalShoppingAppointment();
             var ikeaCustomerAppointment3 = new IkeaPersonalShoppingAppointment();
@@ -57,7 +71,7 @@ namespace IKEAFinalProject
                     Eliminate(); //Clearing the user information
                     break; // move on to case 4
                 case "4": //leads the user to the quit option
-                    Quit(); //Quit
+                    Console.Clear(); // Quits the screen.
                     break; // move on to case 5
                 case "5": //leads the user to set up an Ikea Appointment
                     SignUpForAnAppointment(); //the code in SetUpAnAppointment runs
@@ -105,6 +119,7 @@ namespace IKEAFinalProject
                 Console.WriteLine("Please type a Username: ");
                 string username = Console.ReadLine();
                 Console.Write("Please enter a Password: ");
+                string password = Console.ReadLine();
                 Console.WriteLine("Awesome! We have created your Ikea profile so you can make appointments!");
             }
 
@@ -112,13 +127,6 @@ namespace IKEAFinalProject
             {
 
             }
-
-            static void Quit()
-            {
-
-            }
-            
-
         }
     }
 }
