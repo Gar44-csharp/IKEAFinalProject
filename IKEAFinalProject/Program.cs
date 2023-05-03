@@ -58,7 +58,8 @@ namespace IKEAFinalProject
 
         static void AppointmentPage()
         {
-            if (verifyCustomer == null)
+            bool done = false;
+            while (!done)
             {
             Console.WriteLine("Choose your option: 1: Login  2: Logout 3: View Your Ikea Personal Shopping Appointment 4: Quit 5: Set Up An Appointment"); // We are asking the user to enter an option from 1-5.
             Console.WriteLine("Please choose one of the options above: "); // We ask the user to choose the following options above
@@ -134,6 +135,7 @@ namespace IKEAFinalProject
                 if (verifyCustomer == null)
                 {
                     Console.WriteLine("Oh no, it seems like you are not logged in!");
+                    return;
                 }
 
                 var ikeaAppointmentList = ikeaCustomerAppointments.Where(o => o.customerIkea.Username == verifyCustomer.Username);
