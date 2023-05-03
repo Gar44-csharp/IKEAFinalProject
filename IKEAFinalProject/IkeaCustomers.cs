@@ -9,11 +9,10 @@ namespace IKEAFinalProject
 {
     public class IkeaCustomers
     {
-        internal class Customers
-        {
+
             public List<IkeaCustomer> customers { get; set; }
 
-            public Customers()
+            public IkeaCustomers()
             {
                 customers = new List<IkeaCustomer>();
             }
@@ -36,11 +35,6 @@ namespace IKEAFinalProject
                 }
             }
 
-        }
     }
-
-
-
-
 }
 
